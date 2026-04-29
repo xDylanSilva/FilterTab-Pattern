@@ -31,6 +31,9 @@ Se aplica un diseño condicional basado en colores para comunicar el estado de d
 Para visualizar este proyecto de forma local, siga estos pasos:
 
 1. Clonar el repositorio o descargar los archivos.
-2. Ejecutar el comando para instalar las dependencias:
+2. Entrar a la carpeta específica del proyecto:
+   ```bash
+   cd new-react-vite
+4. Ejecutar el comando para instalar las dependencias:
    ```bash
    npm install
