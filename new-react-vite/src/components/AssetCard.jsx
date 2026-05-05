@@ -1,18 +1,26 @@
-import './AssetCard.css';
+import { Card, Button, Badge } from 'react-bootstrap';
 
 function AssetCard({ asset, onOpenModal }) {
-  const statusClass = asset.status === 'Disponible' ? 'status-ok' : 'status-alert';
+  const isDisponible = asset.status === 'Disponible';
 
   return (
-    <div className="asset-card">
-      <div className="card-header">
-        <span className={`status-badge ${statusClass}`}>{asset.status}</span>
-        <h4>ID: {asset.id}</h4>
-      </div>
-      <h3>{asset.nombre}</h3>
-      <p>Categoría: {asset.categoria}</p>
-      <button onClick={() => onOpenModal(asset)}>Ver Detalles</button>
-    </div>
+    <Card className="h-100 shadow-sm">
+      <Card.Body>
+        <div className="d-flex justify-content-between align-items-start mb-2">
+          <Badge bg={isDisponible ? 'success' : 'warning'} text={isDisponible ? 'white' : 'dark'}>
+            {asset.status}
+          </Badge>
+          <small className="text-muted">{asset.id}</small>
+        </div>
+        <Card.Title>{asset.nombre}</Card.Title>
+        <Card.Text className="text-secondary">
+          Categoría: {asset.categoria}
+        </Card.Text>
+        <Button variant="outline-primary" size="sm" onClick={() => onOpenModal(asset)}>
+          Ver Detalles
+        </Button>
+      </Card.Body>
+    </Card>
   );
 }
 
