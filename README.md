@@ -1,35 +1,40 @@
-# Sistema de Gestión de Activos: Implementación con React + Bootstrap
+# Sistema de Gestión de Activos: Implementación con React + Material UI (MUI)
 
-Este proyecto presenta una solución funcional para la administración de inventarios universitarios, utilizando **React** como motor de lógica y **Bootstrap** como marco de referencia para patrones de interfaz de usuario.
+Este proyecto presenta una solución avanzada para la administración de inventarios técnicos, utilizando **React** para la gestión de estados y **Material UI** para la implementación de un sistema de diseño basado en los principios de *Material Design*.
 
-## ¿Por qué React + Bootstrap es la mejor opción?
+## ¿Por qué Material UI es mejor opción?
 
-La elección de estas tecnologías no es casual. Para un taller de UI Patterns, esta combinación ofrece ventajas competitivas en términos de estandarización y velocidad de desarrollo:
+La transición de estilos tradicionales a un sistema de **CSS-in-JS** con Material UI ofrece ventajas críticas para el desarrollo de interfaces robustas y escalables:
 
-### 1. Estandarización de Patrones (UI Consistency)
-Bootstrap es, en esencia, una biblioteca de patrones de diseño ya probados. Al utilizar componentes como `Card`, `Modal` y `Navbar`, garantizamos que la interfaz siga convenciones de diseño universales. Esto reduce la curva de aprendizaje del usuario final, ya que los elementos se comportan de la forma en que el mundo espera.
+### 1. Sistema de Diseño Cohesivo (Material Design)
+A diferencia de otros frameworks, MUI no solo ofrece componentes, sino un **lenguaje de diseño completo**. 
+* **Ventaja:** El uso de sombras (elevaciones), tipografía estandarizada y feedback visual (efecto *ripple*) mejora la percepción de calidad y profesionalismo de la aplicación.
+* **UI Pattern:** Implementación de tarjetas con jerarquía visual clara y modales de alto contraste.
 
-### 2. Sistema de Rejilla Flexbox y Grid
-La implementación del layout se basa en el sistema de columnas de Bootstrap (`Container`, `Row`, `Col`). 
-* **Ventaja técnica:** Permite un diseño **Mobile-First** sin escribir media-queries manuales. 
-* **Resultado:** El patrón de visualización en tarjetas se adapta automáticamente de 1 a 3 columnas dependiendo de la resolución de la pantalla.
+### 2. Grid System Dinámico y Flexible
+Se ha utilizado el componente `<Grid>` de MUI para estructurar la interfaz en un patrón de **4 columnas** en escritorio.
+* **Responsividad nativa:** El sistema de 12 columnas permite transiciones fluidas:
+  * **Desktop:** 4 columnas (`md={3}`).
+  * **Tablet:** 2 columnas (`sm={6}`).
+  * **Mobile:** 1 columna (`xs={12}`).
 
-### 3. Separación de Preocupaciones (Logic vs. Style)
-React se encarga de la **lógica de estado** (quién es el activo seleccionado, qué se está buscando), mientras que Bootstrap se encarga de la **presentación**. Esta arquitectura modular facilita el mantenimiento y la escalabilidad del código, permitiendo que la lógica matemática del sistema sea independiente de su apariencia visual.
+### 3. Component-Based Styling (Propiedad `sx`)
+El proyecto elimina la dependencia de archivos `.css` externos. Toda la lógica de estilos está encapsulada dentro de los componentes React.
+* **Mantenibilidad:** Evita conflictos globales de CSS y permite que cada componente sea una unidad autónoma y portable.
 
-### 4. Accesibilidad y UX Profesional
-Los componentes de `react-bootstrap` están construidos pensando en la accesibilidad (ARIA roles). El uso de patrones como el **Modal** para detalles y **Badges** de colores para estados (`success`, `warning`) proporciona un feedback inmediato y claro, cumpliendo con las heurísticas de usabilidad de Nielsen.
+### 4. Accesibilidad y UX Refinada
+MUI garantiza que componentes complejos como los **Modales** y los **TextFields** cumplan con estándares de accesibilidad (WAI-ARIA) de forma nativa. El patrón de "Ficha Técnica" mediante modales permite al usuario consultar detalles sin perder el contexto de la lista principal, reduciendo la carga cognitiva.
 
-## Estructura del Taller
+## Estructura de la Solución
 
-* **Componentes Atómicos:** Uso de `AssetCard` para encapsular la información de cada equipo.
-* **Manejo de Estados:** Uso de `useState` para el filtrado dinámico de datos en tiempo real (Pattern: Live Search).
-* **Interacción Dinámica:** Implementación de ventanas emergentes (Modales) para mostrar información extendida sin perder el contexto de la lista principal.
+* **Diseño Atómico:** Componentes reutilizables como `AssetCard.jsx`.
+* **Filtrado en Tiempo Real:** Uso de hooks de React (`useState`) para actualizar la vista instantáneamente según la búsqueda del usuario.
+* **Retroalimentación Visual:** Uso de `Chips` de colores para indicar estados de disponibilidad (`success` para disponible, `warning` para mantenimiento).
 
-## Requisitos de Ejecución
+## Instalación y Ejecución
 
-Para ejecutar este proyecto, solo es necesario contar con **Node.js** instalado. Los pasos son:
+Para levantar el proyecto en un entorno local, sigue estos pasos:
 
 1. **Instalar dependencias:**
    ```bash
-   npm install
+   npm install @mui/material @emotion/react @emotion/styled
