@@ -1,39 +1,35 @@
-# Gestión de Activos Universitarios - UI Patterns
+# Sistema de Gestión de Activos: Implementación con React + Bootstrap
 
-Este repositorio contiene una implementación práctica de patrones de diseño de interfaz de usuario (UI Patterns) utilizando React y Vite. El proyecto se centra en la gestión de activos universitarios, permitiendo la visualización y filtrado eficiente de equipos técnicos.
+Este proyecto presenta una solución funcional para la administración de inventarios universitarios, utilizando **React** como motor de lógica y **Bootstrap** como marco de referencia para patrones de interfaz de usuario.
 
-## Objetivo del Proyecto
+## ¿Por qué React + Bootstrap es la mejor opción?
 
-El propósito de este taller es demostrar cómo la aplicación de patrones específicos mejora la usabilidad y reduce la carga cognitiva del usuario al interactuar con grandes volúmenes de datos. Se han implementado soluciones para los problemas comunes de navegación, visualización y feedback.
+La elección de estas tecnologías no es casual. Para un taller de UI Patterns, esta combinación ofrece ventajas competitivas en términos de estandarización y velocidad de desarrollo:
 
-## Patrones de UI Implementados
+### 1. Estandarización de Patrones (UI Consistency)
+Bootstrap es, en esencia, una biblioteca de patrones de diseño ya probados. Al utilizar componentes como `Card`, `Modal` y `Navbar`, garantizamos que la interfaz siga convenciones de diseño universales. Esto reduce la curva de aprendizaje del usuario final, ya que los elementos se comportan de la forma en que el mundo espera.
 
-### 1. Filter Bar (Patrón de Entrada y Navegación)
-Se ha diseñado una barra de búsqueda que actúa como un filtro dinámico. Este patrón permite al usuario localizar elementos específicos en tiempo real, evitando la necesidad de desplazarse manualmente por toda la lista de activos.
+### 2. Sistema de Rejilla Flexbox y Grid
+La implementación del layout se basa en el sistema de columnas de Bootstrap (`Container`, `Row`, `Col`). 
+* **Ventaja técnica:** Permite un diseño **Mobile-First** sin escribir media-queries manuales. 
+* **Resultado:** El patrón de visualización en tarjetas se adapta automáticamente de 1 a 3 columnas dependiendo de la resolución de la pantalla.
 
-### 2. Card System (Patrón de Contenido)
-La información de los equipos se organiza en tarjetas independientes. Este patrón facilita la jerarquización de los datos, presentando los detalles más relevantes (como el ID y el estado) de forma inmediata y reservando la información técnica para una interacción posterior.
+### 3. Separación de Preocupaciones (Logic vs. Style)
+React se encarga de la **lógica de estado** (quién es el activo seleccionado, qué se está buscando), mientras que Bootstrap se encarga de la **presentación**. Esta arquitectura modular facilita el mantenimiento y la escalabilidad del código, permitiendo que la lógica matemática del sistema sea independiente de su apariencia visual.
 
-### 3. Modal Overlay (Patrón de Feedback y Detalle)
-Para mantener el contexto del usuario, se utiliza una ventana modal que muestra los detalles técnicos de cada activo. Esto permite profundizar en la información sin abandonar la vista principal del inventario.
+### 4. Accesibilidad y UX Profesional
+Los componentes de `react-bootstrap` están construidos pensando en la accesibilidad (ARIA roles). El uso de patrones como el **Modal** para detalles y **Badges** de colores para estados (`success`, `warning`) proporciona un feedback inmediato y claro, cumpliendo con las heurísticas de usabilidad de Nielsen.
 
-### 4. Status Indicators (Patrón de Estado)
-Se aplica un diseño condicional basado en colores para comunicar el estado de disponibilidad de los equipos. Esto permite una identificación visual rápida mediante el uso de convenciones estándar de color (verde para disponibilidad y rojo/amarillo para alertas o mantenimiento).
+## Estructura del Taller
 
-## Tecnologías Utilizadas
+* **Componentes Atómicos:** Uso de `AssetCard` para encapsular la información de cada equipo.
+* **Manejo de Estados:** Uso de `useState` para el filtrado dinámico de datos en tiempo real (Pattern: Live Search).
+* **Interacción Dinámica:** Implementación de ventanas emergentes (Modales) para mostrar información extendida sin perder el contexto de la lista principal.
 
-* **React:** Librería principal para la construcción de la interfaz basada en componentes.
-* **Vite:** Herramienta de construcción y entorno de desarrollo de alto rendimiento.
-* **CSS Grid:** Sistema de maquetación utilizado para garantizar que la interfaz sea responsiva y adaptable a diferentes tamaños de pantalla.
+## Requisitos de Ejecución
 
-## Instalación y Ejecución
+Para ejecutar este proyecto, solo es necesario contar con **Node.js** instalado. Los pasos son:
 
-Para visualizar este proyecto de forma local, siga estos pasos:
-
-1. Clonar el repositorio o descargar los archivos.
-2. Entrar a la carpeta específica del proyecto:
-   ```bash
-   cd new-react-vite
-4. Ejecutar el comando para instalar las dependencias:
+1. **Instalar dependencias:**
    ```bash
    npm install
